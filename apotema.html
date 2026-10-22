@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Apotema · Centrar un polígono en Scratch</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f6fa;color:#183047;font-family:system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.5}main{max-width:1060px;margin:auto;padding:38px 24px}header{margin-bottom:24px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:#167b77}h1{font-size:clamp(28px,4vw,42px);line-height:1.15;margin:10px 0}h2{font-size:21px;margin:0 0 8px}p{margin:8px 0}.lead{font-size:18px;color:#496174}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}section{background:white;border:1px solid #dce5ed;border-radius:18px;padding:23px}svg{width:100%;height:auto;display:block;margin:10px 0}svg text{font-family:system-ui,sans-serif;font-size:16px;fill:#183047}.formula{background:#e7f5f2;border-radius:10px;padding:13px 16px;font-size:20px;font-weight:700;color:#086960}.small{font-size:14px;color:#52697b}.steps{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:24px}.code{font-family:ui-monospace,Consolas,monospace;background:#edf3fb;padding:14px 18px;border-left:4px solid #3677c8;border-radius:8px;font-size:16px;line-height:1.8}.accent{color:#d24c43;font-weight:700}footer{margin-top:16px;font-size:13px;color:#52697b}@media(max-width:720px){main{padding:24px 16px}.grid,.steps{grid-template-columns:1fr}section{padding:18px}}@media print{body{background:white}main{padding:0}section{break-inside:avoid}h1{font-size:30px}}
+</style>
+</head>
+<body><main>
+<header><div class="eyebrow">INFORMÁTICA · 2.º BACHILLERATO · SCRATCH</div><h1>La apotema nos ayuda a centrar</h1><p class="lead">Sitúa el centro del polígono regular en el centro del escenario: <strong>(0, 0)</strong>.</p></header>
+<div class="grid">
+<section><h2>1. ¿Qué es la apotema?</h2><p>Es la distancia del <strong>centro al punto medio de un lado</strong>. Forma un ángulo de <strong>90°</strong> con ese lado.</p>
+<svg viewBox="0 0 440 310" role="img" aria-labelledby="title1 desc1"><title id="title1">Apotema de un hexágono regular</title><desc id="desc1">Segmento perpendicular desde el centro al punto medio del lado inferior. Un triángulo rectángulo relaciona la apotema, medio lado y el ángulo de 180 grados dividido entre n.</desc>
+<polygon points="150,250 290,250 360,128.76 290,7.51 150,7.51 80,128.76" fill="#edf7f5" stroke="#167b77" stroke-width="3"/>
+<path d="M220 128.76 L290 250 L220 250 Z" fill="#fce7c5"/>
+<path d="M220 128.76 L290 250" stroke="#ac813e" stroke-width="2" stroke-dasharray="5 5"/>
+<path d="M220 128.76 L220 250" stroke="#dc594e" stroke-width="5"/>
+<path d="M220 234 L236 234 L236 250" fill="none" stroke="#183047" stroke-width="2"/>
+<path d="M220 166 A37 37 0 0 0 238.5 160.8" fill="none" stroke="#ac813e" stroke-width="2"/>
+<circle cx="220" cy="128.76" r="5" fill="#183047"/><text x="150" y="115">Centro</text>
+<text x="103" y="202" style="fill:#c3443c;font-weight:700">apotema</text>
+<text x="246" y="177" style="font-size:14px">180° / n</text>
+<path d="M150 250 H290" stroke="#3677c8" stroke-width="5"/><circle cx="220" cy="250" r="5" fill="#dc594e"/>
+<text x="231" y="275">lado / 2</text><text x="146" y="300" style="font-size:14px">Lado inferior horizontal</text>
+</svg>
+<div class="formula">apotema = lado / [2 × tan(180° / n)]</div><p class="small"><strong>n</strong> es el número de lados. En Scratch, la tangente usa grados. En el triángulo: tan(180° / n) = (lado / 2) / apotema.</p></section>
+<section><h2>2. ¿Dónde empieza el dibujo?</h2><p>Desde el centro, desplázate <strong>medio lado a la izquierda</strong> y <strong>una apotema hacia abajo</strong>, con el lápiz levantado.</p>
+<svg viewBox="0 0 440 310" role="img" aria-labelledby="title2 desc2"><title id="title2">Posición inicial del polígono centrado</title><desc id="desc2">El punto inicial es el vértice inferior izquierdo: x igual a menos medio lado e y igual a menos apotema. Se dibuja el primer lado hacia la derecha y se gira a la izquierda.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#3677c8"/></marker></defs>
+<polygon points="150,250 290,250 360,128.76 290,7.51 150,7.51 80,128.76" fill="#edf7f5" stroke="#167b77" stroke-width="3"/>
+<path d="M35 128.76 H410 M220 285 V0" stroke="#9eafbf" stroke-width="1.5" stroke-dasharray="4 5"/><text x="400" y="119">x</text><text x="230" y="22">y</text>
+<path d="M220 128.76 H150 V250" fill="none" stroke="#dc594e" stroke-width="3" stroke-dasharray="6 4"/>
+<circle cx="220" cy="128.76" r="5" fill="#183047"/><text x="234" y="117">(0, 0)</text>
+<text x="127" y="108" style="font-size:14px;fill:#c3443c">−lado / 2</text><text x="60" y="202" style="font-size:14px;fill:#c3443c">−apotema</text>
+<path d="M155 250 H285" stroke="#3677c8" stroke-width="5" marker-end="url(#arrow)"/>
+<circle cx="150" cy="250" r="7" fill="#dc594e"/><text x="69" y="276" style="font-weight:700">INICIO</text><text x="195" y="278" style="font-size:14px">Primer lado →</text>
+</svg>
+<div class="formula">Inicio: (−lado / 2, −apotema)</div><p class="small">Apunta a <strong>90°</strong> (derecha). Avanza un lado y gira <strong>a la izquierda</strong> 360° / n. Repite n veces.</p></section>
+</div>
+<section class="steps"><div><h2>3. ¿Qué tamaño debe tener el lado?</h2><p>El escenario de Scratch mide <strong>480 × 360 pasos</strong>: desde −240 hasta 240 en horizontal y desde −180 hasta 180 en vertical.</p><p>Para este ejercicio, repartimos un <strong>perímetro de 800 pasos</strong> entre los <strong>n lados</strong>:</p><div class="formula">lado = 800 / n</div><p>Cuantos más lados tenga el polígono, más corto será cada uno. Por ejemplo:</p><p><strong>4 lados → 200 pasos</strong><br><strong>6 lados → 133,33… pasos</strong><br><strong>8 lados → 100 pasos</strong></p><p class="small"><strong>Conserva los decimales</strong> al calcular y dibujar: no necesitas redondear. Calcula después la apotema con ese mismo lado.</p></div><div>
+<svg viewBox="0 0 540 430" role="img" aria-labelledby="title3 desc3"><title id="title3">Un polígono dentro del escenario de Scratch</title><desc id="desc3">Escenario de 480 por 360 pasos, centrado en el origen. Una circunferencia de radio 154 cabe dentro con margen. Todos los polígonos regulares de perímetro 800, sin redondear sus lados, caben dentro de esa circunferencia.</desc>
+<rect x="30" y="35" width="480" height="360" rx="8" fill="#f3f6fa" stroke="#9eafbf" stroke-width="2"/>
+<text x="270" y="24" text-anchor="middle">480 pasos</text><text x="18" y="215" transform="rotate(-90 18 215)" text-anchor="middle">360 pasos</text>
+<circle cx="270" cy="215" r="154" fill="#e7f5f2" stroke="#167b77" stroke-width="2" stroke-dasharray="6 5"/>
+<path d="M30 215 H510 M270 35 V395" stroke="#9eafbf" stroke-dasharray="4 5"/>
+<polygon points="203.333,330.47 336.667,330.47 403.333,215 336.667,99.53 203.333,99.53 136.667,215" fill="#cbe8e2" fill-opacity=".6" stroke="#167b77" stroke-width="3"/>
+<path d="M270 215 H424" stroke="#dc594e" stroke-width="3"/><circle cx="270" cy="215" r="5" fill="#183047"/>
+<text x="295" y="202" style="fill:#c3443c">radio ≤ 154</text><text x="280" y="242">(0, 0)</text>
+<text x="270" y="418" text-anchor="middle" style="font-size:14px">Centrado + tamaño adecuado = dibujo dentro del escenario</text>
+</svg>
+<p><strong>¿Por qué cabe?</strong> Con perímetro 800, ningún vértice está a más de <strong>154 pasos del centro</strong>. Como 154 es menor que 180, queda margen incluso en la dirección más estrecha.</p><p class="small">Para n ≥ 3: radio = lado / [2 × sen(180° / n)]. El mayor radio se da en el triángulo: aproximadamente 153,96 pasos. El 800 es una elección cómoda, no el tamaño máximo posible.</p></div></section>
+<section style="margin-top:20px"><h2>Compruébalo con un cuadrado</h2><p>Con <strong>n = 4</strong>, el lado mide <strong>200</strong> y la apotema <strong>100</strong>. Empieza en <strong>(−100, −100)</strong>, avanza 200 y gira 90° a la izquierda cuatro veces.</p><p class="accent">El centro queda en (0, 0) y el dibujo cabe en el escenario.</p></section>
+<footer>Centramos el centro geométrico. En polígonos con un número impar de lados, los márgenes superior e inferior pueden ser diferentes.</footer>
+</main></body></html>
+
