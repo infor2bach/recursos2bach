@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>El triángulo · Centrado visual en Scratch</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f6fa;color:#183047;font-family:system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.5}main{max-width:1060px;margin:auto;padding:38px 24px}header{margin-bottom:24px}.eyebrow{font-size:12px;font-weight:800;letter-spacing:.14em;color:#167b77}h1{font-size:clamp(28px,4vw,42px);line-height:1.15;margin:10px 0}h2{font-size:21px;margin:0 0 8px}p{margin:8px 0}.lead{font-size:18px;color:#496174}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}section{background:white;border:1px solid #dce5ed;border-radius:18px;padding:23px}svg{width:100%;height:auto;display:block;margin:10px 0}svg text{font-family:system-ui,sans-serif;font-size:16px;fill:#183047}.formula{background:#e7f5f2;border-radius:10px;padding:13px 16px;font-size:20px;font-weight:700;color:#086960}.small{font-size:14px;color:#52697b}.steps{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:24px}.code{font-family:ui-monospace,Consolas,monospace;background:#edf3fb;padding:14px 18px;border-left:4px solid #3677c8;border-radius:8px;font-size:16px;line-height:1.8}.accent{color:#d24c43;font-weight:700}footer{margin-top:16px;font-size:13px;color:#52697b}@media(max-width:720px){main{padding:24px 16px}.grid,.steps{grid-template-columns:1fr}section{padding:18px}}@media print{body{background:white}main{padding:0}section{break-inside:avoid}h1{font-size:30px}}
+
+.wide{margin-top:20px}.tag{display:inline-block;background:#edf3fb;color:#275f9f;padding:5px 10px;border-radius:7px;font-size:14px;font-weight:700}.control{background:#fff1cf;border-left:5px solid #c98a00;border-radius:10px;padding:14px;margin:8px 0}.motion{background:#edf3fb;border-left:4px solid #3677c8;border-radius:6px;padding:8px 12px;margin:6px 0}.indent{margin-left:18px}.pen{background:#e7f5f2;border-left:4px solid #167b77;border-radius:6px;padding:8px 12px}code{font-family:Consolas,monospace;font-size:.95em}.equation{font-size:24px}.check{background:#e7f5f2;padding:14px;border-radius:10px}svg .label{font-size:14px}summary{cursor:pointer;font-weight:700}details{margin-top:14px}footer{padding-bottom:15px}
+</style></head><body><main>
+<header><div class="eyebrow">INFORMÁTICA · 2.º BACHILLERATO · SCRATCH</div><h1>¿Por qué el triángulo parece descentrado?</h1><p class="lead">La apotema está bien calculada. Para dejar el mismo espacio arriba y abajo, necesitamos situar el dibujo a <strong>mitad de su altura</strong>.</p><span class="tag">Nuestro dibujo: lado horizontal arriba · punta abajo · giro horario</span></header>
+<div class="grid">
+<section><h2>1. El centro no está a mitad de altura</h2><p>La <strong>apotema</strong> mide la distancia del centro al punto medio de un lado. En el triángulo equilátero, hasta el lado superior hay <strong>1 apotema</strong>; hasta la punta inferior, <strong>2 apotemas</strong>.</p>
+<svg viewBox="0 0 440 330" role="img" aria-labelledby="a-title a-desc"><title id="a-title">Una apotema hacia arriba y dos hacia abajo</title><desc id="a-desc">Triángulo equilátero invertido. El centro está a un tercio de la altura desde el lado superior. Un segmento rojo mide una apotema arriba y otro azul mide dos abajo.</desc>
+<polygon points="81.44,65 358.56,65 220,305" fill="#edf7f5" stroke="#167b77" stroke-width="3"/>
+<path d="M220 65 V145" stroke="#dc594e" stroke-width="5"/><path d="M220 145 V305" stroke="#3677c8" stroke-width="5"/>
+<path d="M220 79 H234 V65" fill="none" stroke="#183047" stroke-width="2"/>
+<circle cx="220" cy="145" r="6" fill="#183047"/><text x="238" y="150">Centro</text>
+<text x="111" y="108" style="fill:#c3443c;font-weight:700">1 × ap</text><text x="237" y="230" style="fill:#275f9f;font-weight:700">2 × ap</text>
+<path d="M382 65 H395 V305 H382" fill="none" stroke="#9eafbf" stroke-width="2"/><text x="415" y="185" text-anchor="middle" transform="rotate(-90 415 185)">Altura = 3 × ap</text>
+<text x="220" y="39" text-anchor="middle">Lado superior</text>
+</svg><div class="formula">Altura del triángulo = 3 × ap</div>
+<details><summary>¿Por qué la punta está al doble de distancia?</summary><p>En un triángulo equilátero, la altura también es una mediana. El centro divide esa mediana en dos partes: la que llega al vértice mide el doble que la que llega al lado.</p></details></section>
+<section><h2>2. ¿Qué ocurre al empezar en y = ap?</h2><p>El centro geométrico queda en <strong>(0, 0)</strong>, pero la figura se extiende más hacia abajo. Por eso los márgenes no son iguales.</p>
+<svg viewBox="0 0 440 330" role="img" aria-labelledby="b-title b-desc"><title id="b-title">Antes: márgenes verticales distintos</title><desc id="b-desc">Ejemplo con apotema 60: lado superior en y 60, vértice inferior en y menos 120. En un escenario de menos 180 a 180, sobran 120 pasos arriba y 60 abajo.</desc>
+<rect x="40" y="25" width="360" height="270" rx="8" fill="#f3f6fa" stroke="#9eafbf"/>
+<path d="M40 160 H400 M220 25 V295" stroke="#9eafbf" stroke-dasharray="5 5"/>
+<polygon points="142.06,115 297.94,115 220,250" fill="#e7f5f2" stroke="#167b77" stroke-width="3"/>
+<circle cx="220" cy="160" r="4" fill="#183047"/><text x="235" y="178" class="label">(0, 0)</text>
+<path d="M90 25 V115 M83 25 H97 M83 115 H97" stroke="#dc594e" stroke-width="2"/>
+<path d="M90 250 V295 M83 250 H97 M83 295 H97" stroke="#dc594e" stroke-width="2"/>
+<text x="105" y="69" class="label">120 libres</text><text x="105" y="279" class="label">60 libres</text>
+<text x="310" y="119" class="label">y = +60</text><text x="237" y="253" class="label">y = −120</text>
+<text x="220" y="318" text-anchor="middle" class="label">Ejemplo: ap = 60 · escenario 480 × 360</text>
+</svg><div class="formula">Arriba: +ap &nbsp; · &nbsp; Abajo: −2 × ap</div><p class="small">Centrar el centro geométrico e igualar los márgenes son dos objetivos distintos.</p></section>
+</div>
+<section class="steps"><div><h2>3. La solución: subirlo media apotema</h2><p>La altura total es <strong>3 × ap</strong>. Para repartirla por igual a ambos lados del eje horizontal, el lado superior debe empezar en <strong>la mitad de esa altura</strong>.</p><div class="formula equation">y inicial = (3 × ap) / 2</div><p>Antes empezábamos en <code>ap</code>. Ahora empezamos en <code>ap + ap/2</code>: hemos subido el dibujo <strong>media apotema</strong>.</p><p class="check"><strong>Con ap = 60:</strong><br>Inicio anterior: y = 60.<br>Subimos 30 pasos.<br>Nuevo inicio: y = 90.<br>La punta queda en y = −90.</p><p class="small">La forma y el tamaño del triángulo se mantienen. Su centro geométrico se desplaza hacia arriba; el punto medio de su altura queda en y = 0.</p></div><div>
+<svg viewBox="0 0 440 330" role="img" aria-labelledby="c-title c-desc"><title id="c-title">Después: márgenes verticales iguales</title><desc id="c-desc">Con apotema 60, el lado superior pasa a y 90 y el vértice inferior a y menos 90. Quedan 90 pasos libres tanto arriba como abajo. El centro geométrico pasa a y 30.</desc>
+<rect x="40" y="25" width="360" height="270" rx="8" fill="#f3f6fa" stroke="#9eafbf"/>
+<path d="M40 160 H400 M220 25 V295" stroke="#9eafbf" stroke-dasharray="5 5"/>
+<polygon points="142.06,92.5 297.94,92.5 220,227.5" fill="#e7f5f2" stroke="#167b77" stroke-width="3"/>
+<path d="M90 25 V92.5 M83 25 H97 M83 92.5 H97 M90 227.5 V295 M83 227.5 H97 M83 295 H97" stroke="#167b77" stroke-width="2"/>
+<text x="105" y="62" class="label">90 libres</text><text x="105" y="265" class="label">90 libres</text>
+<circle cx="220" cy="137.5" r="4" fill="#dc594e"/><text x="236" y="138" class="label">Centro: y = 30</text>
+<text x="309" y="96" class="label">y = +90</text><text x="237" y="232" class="label">y = −90</text>
+<text x="350" y="177" class="label">y = 0</text><text x="220" y="318" text-anchor="middle" class="label">El mismo espacio arriba y abajo</text>
+</svg></div></section>
+<section class="steps"><div><h2>4. Cambia solo la posición inicial</h2><p>Después de calcular la apotema, sustituye el bloque <strong>«dar a y el valor ap»</strong> por un bloque de Control <strong>«si… si no»</strong>.</p><p>Colócalo <strong>antes de bajar el lápiz</strong>. Mantén la posición horizontal y el bucle que dibuja los lados.</p><div class="formula">Si n_lados = 3 → y = (3 × ap) / 2</div><p><strong>No cambies la variable ap.</strong> Sigue representando la apotema real del triángulo; solo utilizamos su valor para calcular dónde empezar.</p><p class="small">En Operadores, coloca la multiplicación <code>3 × ap</code> dentro del primer hueco de una división entre <code>2</code>.</p></div>
+<div aria-label="Secuencia de bloques que debes colocar en Scratch">
+<div class="pen">subir lápiz</div><div class="motion">dar a x el valor <strong>(0 − (t_lado / 2))</strong></div>
+<div class="control"><strong>si &lt; n_lados = 3 &gt; entonces</strong><div class="motion indent">dar a y el valor <strong>((3 × ap) / 2)</strong></div><strong>si no</strong><div class="motion indent">dar a y el valor <strong>ap</strong></div></div>
+<div class="motion">apuntar en dirección <strong>90</strong></div><div class="pen">bajar lápiz</div><p class="small">A continuación: repetir n_lados → mover t_lado pasos → girar a la derecha angulo grados. Conserva el color y la espera de tu programa.</p></div></section>
+<section class="wide"><h2>Compruébalo en tu proyecto</h2><p>Con <strong>n_lados = 3</strong> y <strong>ap ≈ 77,076</strong>, el nuevo inicio es <strong>y ≈ 115,614</strong>. La punta queda en <strong>y ≈ −115,614</strong>: los márgenes son iguales.</p><p class="accent">La apotema funciona. Para centrar visualmente el triángulo, usamos la mitad de su altura.</p><p class="small">Estos decimales son una referencia para comprobar el resultado. En el código, usa la variable ap y conserva su precisión.</p></section>
+<footer>Esta modificación corresponde al triángulo con el lado horizontal arriba y giro a la derecha. Si el lado está abajo y giras a la izquierda, la coordenada inicial sería −(3 × ap) / 2. Otros polígonos impares también pueden tener márgenes desiguales; esta condición corrige únicamente el triángulo.</footer>
+</main></body></html>
